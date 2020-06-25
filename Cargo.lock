@@ -301,12 +301,42 @@ dependencies = [
 ]
 
 [[package]]
+name = "gstreamer-base"
+version = "0.15.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "42552f75cc6c260b0be180d5c955f4cd74bd170289c622404c25f1210b521c12"
+dependencies = [
+ "bitflags",
+ "glib",
+ "glib-sys",
+ "gobject-sys",
+ "gstreamer",
+ "gstreamer-base-sys",
+ "gstreamer-sys",
+ "libc",
+]
+
+[[package]]
+name = "gstreamer-base-sys"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ba384f52174b3c586593fca32642680a9e67961fea9f4cd8419f678965023bed"
+dependencies = [
+ "glib-sys",
+ "gobject-sys",
+ "gstreamer-sys",
+ "libc",
+ "pkg-config",
+]
+
+[[package]]
 name = "gstreamer-rust"
 version = "0.1.0"
 dependencies = [
  "gdk",
  "glib",
  "gstreamer",
+ "gstreamer-video",
  "gtk",
 ]
 
@@ -318,6 +348,41 @@ checksum = "1d18da01b97d0ab5896acd5151e4c155acefd0e6c03c3dd24dd133ba054053db"
 dependencies = [
  "glib-sys",
  "gobject-sys",
+ "libc",
+ "pkg-config",
+]
+
+[[package]]
+name = "gstreamer-video"
+version = "0.15.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0ad7e69a940246d41428c72072a376785716b3669da333cbee1156fd90574dc9"
+dependencies = [
+ "bitflags",
+ "futures-channel",
+ "futures-util",
+ "glib",
+ "glib-sys",
+ "gobject-sys",
+ "gstreamer",
+ "gstreamer-base",
+ "gstreamer-base-sys",
+ "gstreamer-sys",
+ "gstreamer-video-sys",
+ "lazy_static",
+ "libc",
+]
+
+[[package]]
+name = "gstreamer-video-sys"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "615f4298f842f4b4581606e13cf52e1710e2130d989bb99161a5665aa3ccb7cc"
+dependencies = [
+ "glib-sys",
+ "gobject-sys",
+ "gstreamer-base-sys",
+ "gstreamer-sys",
  "libc",
  "pkg-config",
 ]
